@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | HOPS Portal</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body class="dashboard-body">
+
+<div class="dashboard-wrapper">
+    <aside class="dash-sidebar">
+        <div class="dash-logo">HOPS Portal</div>
+        <nav>
+            <a href="#" class="active">📊 <span>Overview</span></a>
+            <a href="#">📚 <span>My Courses</span></a>
+            <a href="#">📝 <span>Assignments</span></a>
+            <a href="#">🗓️ <span>Timetable</span></a>
+            <a href="#">📈 <span>Grades</span></a>
+            <a href="index.html" class="logout">🚪 <span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <div class="header-text">
+                <h2>Welcome back, <span class="student-name">Blessing</span>! 👋</h2>
+                <p>Check your latest progress and upcoming tasks.</p>
+            </div>
+            <div class="user-profile">
+                <img src="images/blessing chess child.png" alt="Blessing's Profile">
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card blue">
+                <h3>Overall GPA</h3>
+                <p class="stat-val">4.85</p>
+                <small>Top 5% of Class</small>
+            </div>
+            <div class="stat-card green">
+                <h3>Attendance</h3>
+                <p class="stat-val">98%</p>
+                <small>Excellent Standing</small>
+            </div>
+            <div class="stat-card orange">
+                <h3>Pending Tasks</h3>
+                <p class="stat-val">3</p>
+                <small>Next due: Tomorrow</small>
+            </div>
+        </section>
+
+        <div class="dash-content-grid">
+            <div class="dash-card">
+                <div class="card-header">
+                    <h3>🗓️ Today's Timetable</h3>
+                </div>
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Subject</th>
+                            <th>Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:00 AM</td>
+                            <td><strong>Mathematics</strong></td>
+                            <td>Block A-2</td>
+                        </tr>
+                        <tr>
+                            <td>10:30 AM</td>
+                            <td><strong>Computer Science</strong></td>
+                            <td>Lab 1</td>
+                        </tr>
+                        <tr>
+                            <td>12:00 PM</td>
+                            <td><strong>English Lang.</strong></td>
+                            <td>Block C-1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dash-card">
+                <h3>📝 Recent Assignments</h3>
+                <div class="assignment-list">
+                    <div class="assignment-item">
+                        <p><strong>Physics:</strong> Thermodynamics Quiz</p>
+                        <span>Due: Tomorrow</span>
+                    </div>
+                    <hr>
+                    <div class="assignment-item">
+                        <p><strong>History:</strong> Colonial Era Essay</p>
+                        <span>Due: Friday</span>
+                    </div>
+                    <hr>
+                    <div class="assignment-item">
+                        <p><strong>Biology:</strong> Cell Structure Lab</p>
+                        <span>Due: Monday</span>
+                    </div>
+                </div>
+                <button class="view-all-btn">View All Tasks</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>HOPS Schools</h4>
+            <p>Excellence in education, character, and leadership.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="about.html">About Us</a>
+            <a href="portal.html">Student Portal</a>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <a href="contact.html">Help Center</a>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <span>FB</span> <span>TW</span> <span>IG</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Heirs of Promise Schools. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

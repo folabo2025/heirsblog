@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard | HOPS Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard-wrapper">
+    <aside class="dash-sidebar">
+        <div class="dash-logo">HOPS Staff</div>
+        <nav>
+            <a href="#" class="active">📊 <span>Overview</span></a>
+            <a href="#">👨‍🎓 <span>Student Records</span></a>
+            <a href="#">📝 <span>Grading System</span></a>
+            <a href="#">📅 <span>Lesson Planner</span></a>
+            <a href="#">💬 <span>Parent Messages</span></a>
+            <a href="portal.html" class="logout">🚪 <span>Logout</span></a>
+        </nav>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <div class="header-text">
+                <h2>Good Morning, <span class="student-name">Mr. Adebayo</span>! 👋</h2>
+                <p>Manage your classes and upload academic reports.</p>
+            </div>
+            <div class="user-profile">
+                <div class="avatar-placeholder">TA</div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card blue">
+                <h3>My Classes</h3>
+                <p class="stat-val">4</p>
+                <small>SS1 - SS3 Science</small>
+            </div>
+            <div class="stat-card green">
+                <h3>Papers Marked</h3>
+                <p class="stat-val">85%</p>
+                <small>Term 2 Mid-term</small>
+            </div>
+            <div class="stat-card orange">
+                <h3>Action Items</h3>
+                <p class="stat-val">12</p>
+                <small>Pending Attendance</small>
+            </div>
+        </section>
+
+        <div class="dash-content-grid">
+            <div class="dash-card">
+                <h3>📤 Quick Grade Upload</h3>
+                <form class="portal-form" style="padding: 0; box-shadow: none;">
+                    <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                        <select class="input-group" style="padding: 10px; border-radius: 8px;">
+                            <option>Select Class</option>
+                            <option>SS3 Science</option>
+                        </select>
+                        <select class="input-group" style="padding: 10px; border-radius: 8px;">
+                            <option>Select Subject</option>
+                            <option>Physics</option>
+                        </select>
+                    </div>
+                    <button class="view-all-btn" style="background: var(--primary-blue); color: white;">Open Grade Sheet</button>
+                </form>
+            </div>
+
+            <div class="dash-card">
+                <h3>🔔 Staff Notices</h3>
+                <div class="assignment-list">
+                    <div class="assignment-item">
+                        <p><strong>Staff Meeting:</strong> Friday 2 PM</p>
+                        <span style="color: var(--accent-blue);">Board Room</span>
+                    </div>
+                    <hr>
+                    <div class="assignment-item">
+                        <p><strong>Result Portal:</strong> Closing Sunday</p>
+                        <span style="color: red;">Urgent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

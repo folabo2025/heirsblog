@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Login | Heirs of Promise Schools</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-body">
+
+<header class="header">
+    <div class="left">
+        <div class="hamburger" id="menuIcon" onclick="toggleMenu()">☰</div>
+        <a href="index.html" class="logo">Heirs of Promise Schools</a>
+    </div>
+    <div class="right">
+        <div class="signup" onclick="window.location.href='apply.html'">Apply Now</div>
+    </div>
+</header>
+
+<nav id="sideMenu" class="side-menu">
+    <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="academics.html">📁 Academics</a></li>
+        <li><a href="admissions.html">📁 Admissions</a></li>
+        <li><a href="subscriptions.html">📺 Subscriptions</a></li>
+        <li><a href="library.html">📁 Library</a></li>
+        <li><a href="about.html">📁 About</a></li>
+        <li><a href="contact.html">📁 Contact</a></li>
+        <li><a href="portal.html" class="portal-btn active">🚀 Portal</a></li>
+    </ul>
+</nav>
+
+<div id="overlay" class="overlay"></div>
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-header">
+            <img src="images/trimmed logo.png" alt="Logo" class="login-logo">
+            <h2>School Portal</h2>
+            <p>Select your role to continue</p>
+        </div>
+
+        <div class="portal-tabs">
+            <button class="tab-btn active" onclick="switchPortal(this, 'student')">Student</button>
+            <button class="tab-btn" onclick="switchPortal(this, 'staff')">Staff</button>
+            <button class="tab-btn" onclick="switchPortal(this, 'parent')">Parent</button>
+        </div>
+        
+        <form id="portalForm" class="portal-form" onsubmit="handlePortalLogin(event)">
+            <div class="input-group">
+                <input type="text" id="idNumber" placeholder=" " required>
+                <label for="idNumber" id="idLabel">Student ID (e.g. HOPS/ST/001)</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Password</label>
+            </div>
+            
+            <div class="options">
+                <label class="checkbox-container">
+                    <input type="checkbox"> 
+                    Remember me
+                </label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="login-btn" id="submitBtn">Login as Student</button>
+        </form>
+        
+        <div class="login-footer">
+            <p>First time user? <strong>Contact Admin for credentials</strong></p>
+            <button onclick="window.location.href='index.html'" class="back-home-btn">← Back to Home</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Variable to track the current selected role
+    let currentRole = 'student';
+
+    function switchPortal(element, role) {
+        currentRole = role; // Update our tracker
+        
+        // UI Updates: Tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        element.classList.add('active');
+
+        // UI Updates: Labels and Buttons
+        const idLabel = document.getElementById('idLabel');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (role === 'student') {
+            idLabel.innerText = "Student ID (e.g. HOPS/ST/001)";
+            submitBtn.innerText = "Login as Student";
+        } else if (role === 'staff') {
+            idLabel.innerText = "Staff ID (e.g. HOPS/SF/001)";
+            submitBtn.innerText = "Login as Staff";
+        } else if (role === 'parent') {
+            idLabel.innerText = "Parent Email / Phone";
+            submitBtn.innerText = "Login as Parent";
+        }
+    }
+
+    function handlePortalLogin(event) {
+        event.preventDefault(); // Stop page refresh
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerText;
+        
+        // 1. Visual Feedback (Loading state)
+        submitBtn.innerText = "Authenticating...";
+        submitBtn.style.opacity = "0.7";
+        submitBtn.disabled = true;
+
+        // 2. Simulate a small delay for "Security Checking"
+        setTimeout(() => {
+            if (currentRole === 'student') {
+                window.location.href = 'dashboard.html'; 
+            } else if (currentRole === 'staff') {
+                window.location.href = 'staff-dashboard.html';
+            } else if (currentRole === 'parent') {
+                window.location.href = 'parent-dashboard.html';
+            }
+        }, 1200); 
+    }
+</script>
+
+</body>
+</html>
